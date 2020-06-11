@@ -7,10 +7,6 @@ import { Rate } from '../Rate/Rate';
 
  
 export class App extends React.Component {
-    // constructor(props){
-    //   super(props);
-    // }
-
     render() {
         return (
             <div>
@@ -20,6 +16,8 @@ export class App extends React.Component {
                        <Rate/> 
                     </main>
                 </div>
+
+                
 
                 <div className="container" id="cookie_info">
                     <div className="site-content">

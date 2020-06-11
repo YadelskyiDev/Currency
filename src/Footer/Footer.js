@@ -9,14 +9,13 @@ export class Footer extends React.Component{
           <div className="container">
             <div className="flex-container">
               <div className="flex-item">
-
+                <h1 className="footer-title">2020 &copy; React currency</h1>
                 <p>All Rights Reserved</p>
-
               </div>
               <div className="flex-item">
                 <div className="module-body">
                   <ul className="list-unstyled">
-                    <li><a href="/sitemap/" tooltip="Карта сайта">Карта сайту</a></li>
+                    <li><a href="/sitemap/" tooltip="Карта сайту">Карта сайту</a></li>
                     <li><a href="/sitemaps.xml" target="_blank" tooltip="Google Sitemap">Google Sitemap</a></li>
                   </ul>
                 </div>

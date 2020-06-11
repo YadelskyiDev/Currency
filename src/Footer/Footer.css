@@ -2,6 +2,8 @@
   background: #202020;
   padding-top: 30px;
   padding-bottom: 30px;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer .footer-bottom ul li a {
@@ -24,4 +26,21 @@
   color: #fff;
   font-size: 1.4rem;
   text-decoration: none;
+}
+
+@media screen and (max-width: 720px) {
+  .footer .footer-bottom {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+  }
+
+  .footer .footer-bottom ul li a {
+    margin-left: 0;
+  }
+
+  .container {
+    width: 100%;
+    margin: 0;
+  }
 }
