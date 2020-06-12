@@ -1,6 +1,9 @@
 import React from 'react';
 import './Footer.css';
 
+import { HashRouter as Router, NavLink } from 'react-router-dom';
+import { footerNav } from './footerNav';
+
 export class Footer extends React.Component{
   render(){
     return (
@@ -15,19 +18,22 @@ export class Footer extends React.Component{
               <div className="flex-item">
                 <div className="module-body">
                   <ul className="list-unstyled">
-                    <li><a href="/sitemap/" tooltip="Карта сайту">Карта сайту</a></li>
-                    <li><a href="/sitemaps.xml" target="_blank" tooltip="Google Sitemap">Google Sitemap</a></li>
+                    <Router>
+                      {Object.keys(footerNav).filter(item => item === 'googleSitemap' || item === 'sitemap').map(item => {
+                        return <li key={item}><NavLink to={`/${item}`} tooltip={footerNav[item]}>{footerNav[item]}</NavLink></li>
+                      })}
+                    </Router>
                   </ul>
                 </div>
               </div>
               <div className="flex-item">
                 <div className="module-body">
                   <ul className="list-unstyled">
-                    <li><a href="/contact/" tooltip="Контакты">Контакти</a></li>
-                    <li><a href="/d">Гарантії</a></li>
-                    <li><a href="/s">Про сервіс</a></li>
-                    <li><a href="/o">Умови повернення</a></li>
-                    <li><a href="/p">Угода про використання сервісу</a></li>
+                    <Router>
+                      {Object.keys(footerNav).filter(item => item !== 'googleSitemap' && item !== 'sitemap').map(item => {
+                        return <li key={item}><NavLink to={`/${item}`} tooltip={footerNav[item]}>{footerNav[item]}</NavLink></li>
+                      })}
+                    </Router>
                   </ul>
                 </div>
               </div>

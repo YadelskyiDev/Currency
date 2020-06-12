@@ -55,15 +55,3 @@
   font-size: 1.3rem;
   font-weight: bold;
 }
-
-@media screen and (max-width: 720px) {
-  .flex-container {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .flex-item {
-    width: 80%;
-  }
-}

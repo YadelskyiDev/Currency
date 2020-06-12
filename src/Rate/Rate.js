@@ -1,6 +1,7 @@
 import React from 'react';
 import './Rate.css';
 import { Calc } from '../Calc/Calc';
+import { Agreement } from '../Agreement/Agreement';
 
 export class Rate extends React.Component {
   constructor(props) {
@@ -48,6 +49,7 @@ export class Rate extends React.Component {
           )}
         </div>
         <Calc rate={currencyRate}/>
+        <Agreement/>
       </div>
     );
   }

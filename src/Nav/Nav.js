@@ -1,6 +1,9 @@
 import React from 'react';
 import './Nav.css';
 
+import { HashRouter as Router, NavLink } from 'react-router-dom';
+import { navArr } from './NavigationArr';
+
 export class Nav extends React.Component {
     render() {
         return (
@@ -8,9 +11,15 @@ export class Nav extends React.Component {
                 <div className="container">
                     <nav>
                         <ul>
-                            {/* <li><a href="#">Головна</a></li>
-                            <li><a href="#">Пункти обміну</a></li>
-                            <li><a href="#">Контакти</a></li> */}
+                            <Router>
+                                {Object.keys(navArr).map(item => {
+                                    if (item === 'main') {
+                                        return <li key={item}><NavLink to='/' tooltip={navArr[item]}>{navArr[item]}</NavLink></li>
+                                    } else {
+                                        return <li key={item}><NavLink to={`/${item}`} tooltip={navArr[item]}>{navArr[item]}</NavLink></li>
+                                    }
+                                })}
+                            </Router>
                         </ul>
                     </nav>
                 </div>

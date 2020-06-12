@@ -3,8 +3,16 @@ import './App.css';
 import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
 import { Rate } from '../Rate/Rate';
+import { About } from '../About/About';
+import { Contact } from '../Contact/Contact';
+import { Guarantees } from '../Guarantees/Guarantees';
+import { Service } from '../Service/Service';
+import { TermsReturn } from '../TermsReturn/TermsReturn';
+import { Agreement } from '../Agreement/Agreement';
+import { SiteMap } from '../SiteMap/SiteMap';
+import { Error404 } from '../Error404/Error404';
 
-
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
  
 export class App extends React.Component {
     render() {
@@ -13,18 +21,20 @@ export class App extends React.Component {
                 <Header/>
                 <div className="container">
                     <main>
-                       <Rate/> 
+                        <Router>
+                            <Switch>
+                                <Route exact path="/" component={Rate} />
+                                <Route exact path="/about" component={About} />
+                                <Route exact path="/contact" component={Contact} />
+                                <Route exact path="/guarantees" component={Guarantees} />
+                                <Route exact path="/service" component={Service} />
+                                <Route exact path="/termsReturn" component={TermsReturn} />
+                                <Route exact path="/agreement" component={Agreement} />
+                                <Route exact path="/siteMap" component={SiteMap} />
+                                <Route component={Error404} />
+                            </Switch>
+                        </Router> 
                     </main>
-                </div>
-
-                
-
-                <div className="container" id="cookie_info">
-                    <div className="site-content">
-                        <div className="well">На нашому сайти ми використовуємо cookie для збору інформації технічного характеру.<br />Зокрема,
-                  для персоніфіцированої работи сайту ми обробляємо IP-адресу регіону вашого
-            місця розташування.&nbsp;<button className="btn btn-primary btn-sm">OK</button></div>
-                    </div>
                 </div>
                <Footer/>
             </div>
